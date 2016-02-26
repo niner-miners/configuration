@@ -1,0 +1,15 @@
+[Unit]
+After=syslog.target
+After=network.target
+
+[Service]
+User=niner-miners
+Group=niner-miners
+ExecStart=/home/niner-miners/configuration/%i
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=niner-miners-%i
+
+[Install]
+WantedBy=multi-user.target
