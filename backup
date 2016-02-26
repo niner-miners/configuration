@@ -2,12 +2,12 @@
 source $(dirname $BASH_SOURCE)/source
 
 # log start time
-echo "START:  $(DATE)" >  $MINECRAFT_DIR/backup.log
-echo ""
+echo "START: $(DATE)" > $BACKUP_LOG
+echo "" >> $BACKUP_LOG
 
 # log AWS output
-echo "aws s3 sync $MINECRAFT_DIR $AWS_S3_BUCKET"
+echo $(aws s3 sync $MINECRAFT_DIR $AWS_S3_BUCKET) >> $BACKUP_LOG
 
 # log end time
-echo ""
-echo "FINISH: $(DATE)" >> $MINECRAFT_DIR/backup.log
+echo "" >> $BACKUP_LOG
+echo "FINISH: $(DATE)" >> $BACKUP_LOG
