@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# server
+MINECRAFT_DIR="$HOME/minecraft"
+MINECRAFT_JAR="$MINECRAFT_DIR/spigot.jar"
+MINECRAFT_MIN="1024M"
+MINECRAFT_MAX="3072M"
+MINECRAFT_NAME="niner-miners-minecraft-server"
+MINECRAFT_TILES="server/plugins/dynmap/web/tiles/**\*"
+
+# backup
+AWS_S3_BUCKET="s3://niner-miners-minecraft/"
+
+# tunnel
+TUNNEL_USER="guest"
+TUNNEL_DOMAIN="nickbreaton.com"
+TUNNEL_MONITOR_PORT="60101"
+MAP_PORTS_SSH=( "22" "60122" )
+MAP_PORTS_DYNMAP=( "8123" "50100" )
+MAP_PORTS_MINECRAFT=( "25565" "60100" )
