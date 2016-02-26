@@ -14,8 +14,10 @@ BACKUP_LOG="$MINECRAFT_DIR/backup.log"
 
 # tunnel
 TUNNEL_USER="guest"
-TUNNEL_DOMAIN="nickbreaton.com"
+TUNNEL_HOST="nickbreaton.com"
 TUNNEL_MONITOR_PORT="60101"
-MAP_PORTS_SSH=( "22" "60122" )
-MAP_PORTS_DYNMAP=( "8123" "50100" )
-MAP_PORTS_MINECRAFT=( "25565" "60100" )
+TUNNEL_PORT_MAP=(
+  "22"      "60122"    # SSH
+  "8123"    "50100"    # Dynmap
+  "25565"   "60100"    # Minecraft
+)
