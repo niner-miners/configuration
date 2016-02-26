@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # server
+MINECRAFT_ID="niner-miners-minecraft-server"
 MINECRAFT_DIR="$HOME/minecraft"
 MINECRAFT_JAR="$MINECRAFT_DIR/spigot.jar"
 MINECRAFT_MIN="1024M"
 MINECRAFT_MAX="3072M"
-MINECRAFT_NAME="niner-miners-minecraft-server"
 MINECRAFT_TILES="server/plugins/dynmap/web/tiles/**\*"
 
 # backup
