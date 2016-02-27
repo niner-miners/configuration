@@ -1,0 +1,8 @@
+#!/bin/bash
+source $(dirname $BASH_SOURCE)/source
+
+# validate user input
+INPUT=$(echo $@)
+
+# exectue command via screen
+screen -p 0 -S $MINECRAFT_ID -X eval "stuff \"$INPUT\"\\015"
