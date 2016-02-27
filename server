@@ -5,4 +5,4 @@ source $(dirname $BASH_SOURCE)/source
 cd "$MINECRAFT_DIR/server"
 
 # start the Minecraft server in a screen instance
-echo "screen -DmS $MINECRAFT_ID /bin/java -Xms$MINECRAFT_MIN -Xmx$MINECRAFT_MAX -jar $MINECRAFT_JAR nogui"
+screen -DmS $MINECRAFT_ID java -Xms$MINECRAFT_MIN -Xmx$MINECRAFT_MAX -jar $MINECRAFT_JAR nogui

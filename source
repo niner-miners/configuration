@@ -3,7 +3,7 @@
 # server
 MINECRAFT_ID="niner-miners-minecraft-server"
 MINECRAFT_DIR="$HOME/minecraft"
-MINECRAFT_JAR="$MINECRAFT_DIR/spigot.jar"
+MINECRAFT_JAR="$MINECRAFT_DIR/server/spigot.jar"
 MINECRAFT_MIN="1024M"
 MINECRAFT_MAX="3072M"
 MINECRAFT_TILES="server/plugins/dynmap/web/tiles/**\*"
