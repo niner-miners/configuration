@@ -1,10 +1,12 @@
 #!/bin/bash
 source $(dirname $BASH_SOURCE)/source
 
+# convert port map to reverse tunnels
 for i in "${!TUNNEL_PORT_MAP[@]}"; do
   if ! ((i % 2)); then
     TUNNELS="-R ${TUNNEL_PORT_MAP[((i + 1))]}:localhost:${TUNNEL_PORT_MAP[$i]} $TUNNELS"
   fi
 done
 
+# use autossh to keep SSH tunnels open
 autossh $TUNNELS -M $TUNNEL_MONITOR_PORT -N $TUNNEL_USER@$TUNNEL_HOST
