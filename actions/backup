@@ -1,5 +1,5 @@
 #!/bin/bash
-source $(dirname $BASH_SOURCE)/source
+source $(dirname $(dirname $BASH_SOURCE))/CONFIG
 
 # log start time
 echo "START: $(DATE)" > $BACKUP_LOG

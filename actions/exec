@@ -1,5 +1,5 @@
 #!/bin/bash
-source $(dirname $BASH_SOURCE)/source
+source $(dirname $(dirname $BASH_SOURCE))/CONFIG
 
 # validate user input
 INPUT=$(echo $@)

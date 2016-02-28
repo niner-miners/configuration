@@ -1,5 +1,5 @@
 #!/bin/bash
-source $(dirname $BASH_SOURCE)/source
+source $(dirname $(dirname $BASH_SOURCE))/CONFIG
 
 # convert port map to reverse tunnels
 for i in "${!TUNNEL_PORT_MAP[@]}"; do
