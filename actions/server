@@ -1,5 +1,5 @@
 #!/bin/bash
-source $(dirname $BASH_SOURCE)/source
+source $(dirname $(dirname $BASH_SOURCE))/CONFIG
 
 # change directory to server files
 cd $MINECRAFT_SERVER_DIR

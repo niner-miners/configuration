@@ -5,7 +5,7 @@ After=network.target
 [Service]
 User=niner-miners
 Group=niner-miners
-ExecStart=/home/niner-miners/configuration/%i
+ExecStart=/home/niner-miners/core/actions/%i
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
