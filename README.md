@@ -12,8 +12,9 @@ $HOME/
 │   └── # this repository
 └── minecraft/
     ├── data/
-    │   ├── logs/
     │   └── ...
+    ├── logs/
+    │   └── backup.log
     └── server/
         └── # all Minecraft server files
 ```

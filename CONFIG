@@ -11,7 +11,7 @@ MINECRAFT_TILES="server/plugins/dynmap/web/tiles/**\*"
 
 # backup
 AWS_S3_BUCKET="s3://niner-miners-minecraft/"
-BACKUP_LOG="$MINECRAFT_DIR/data/logs/backup.log"
+BACKUP_LOG="$MINECRAFT_DIR/logs/backup.log"
 
 # tunnel
 TUNNEL_USER="guest"
