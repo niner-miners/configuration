@@ -2,7 +2,7 @@
 source $(dirname $(dirname $BASH_SOURCE))/CONFIG
 
 # log start time
-echo "START: $(DATE)" > $BACKUP_LOG
+echo "START: $(date)" > $BACKUP_LOG
 echo "" >> $BACKUP_LOG
 
 # log AWS output
@@ -10,4 +10,4 @@ echo $(aws s3 sync $MINECRAFT_DIR $AWS_S3_BUCKET --exclude $MINECRAFT_TILES --de
 
 # log end time
 echo "" >> $BACKUP_LOG
-echo "FINISH: $(DATE)" >> $BACKUP_LOG
+echo "FINISH: $(date)" >> $BACKUP_LOG
