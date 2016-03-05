@@ -6,7 +6,7 @@ MINECRAFT_DIR="$HOME/minecraft"
 MINECRAFT_JAR="$MINECRAFT_DIR/spigot.jar"
 MINECRAFT_MIN="1024M"
 MINECRAFT_MAX="3072M"
-MINECRAFT_TILES="plugins/dynmap/web/tiles/**\*"
+MINECRAFT_TILES="plugins/dynmap/web/tiles/*"
 
 # backup
 AWS_S3_BUCKET="s3://niner-miners-minecraft/"
