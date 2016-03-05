@@ -6,7 +6,7 @@ echo "START: $(date)" > $BACKUP_LOG
 echo "" >> $BACKUP_LOG
 
 # log AWS output
-echo $(aws s3 sync $MINECRAFT_DIR $AWS_S3_BUCKET --exclude $MINECRAFT_TILES --delete) >> $BACKUP_LOG
+aws s3 sync $MINECRAFT_DIR $AWS_S3_BUCKET --exclude $MINECRAFT_TILES --delete
 
 # log end time
 echo "" >> $BACKUP_LOG
