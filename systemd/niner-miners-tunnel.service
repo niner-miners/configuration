@@ -1,6 +1,5 @@
 [Unit]
-After=syslog.target
-After=network.target
+After=syslog.target network.target niner-miners-server.service
 
 [Service]
 User=niner-miners
