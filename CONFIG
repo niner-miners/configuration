@@ -11,6 +11,7 @@ MINECRAFT_TILES="plugins/dynmap/web/tiles/*"
 # API
 API_PORT=8122
 API_DIR="$HOME/api"
+NODE_ENV=production
 
 # backup
 AWS_S3_BUCKET="s3://niner-miners-minecraft/"
