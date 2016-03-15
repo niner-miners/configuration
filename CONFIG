@@ -8,6 +8,10 @@ MINECRAFT_MIN="1024M"
 MINECRAFT_MAX="3072M"
 MINECRAFT_TILES="plugins/dynmap/web/tiles/*"
 
+# API
+API_PORT=8122
+API_DIR="$HOME/api"
+
 # backup
 AWS_S3_BUCKET="s3://niner-miners-minecraft/"
 BACKUP_LOG="$MINECRAFT_DIR/logs/backup.log"
@@ -18,6 +22,7 @@ TUNNEL_HOST="nickbreaton.com"
 TUNNEL_MONITOR_PORT="60101"
 TUNNEL_PORT_MAP=(
   "22"      "60122"    # SSH
-  "8123"    "50100"    # Dynmap
+  $API_PORT "50100"    # API
+  "8123"    "50200"    # Dynmap
   "25565"   "60100"    # Minecraft
 )
