@@ -36,5 +36,5 @@ echo "eula=true" > minecraft/eula.txt
 ```
 Start the Minecraft server:
 ```
-HOME=$HOME/fake-home/ ./core/server
+HOME=$HOME/fake-home/ ./core/actions/server
 ```
