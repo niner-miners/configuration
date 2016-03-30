@@ -14,10 +14,6 @@ API_PORT=8122
 API_DIR="$HOME/api"
 NODE_ENV=production
 
-# backup
-AWS_S3_BUCKET="s3://niner-miners-minecraft/"
-BACKUP_LOG="$MINECRAFT_DIR/logs/backup.log"
-
 # tunnel
 TUNNEL_USER="guest"
 TUNNEL_HOST="nickbreaton.com"
