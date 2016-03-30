@@ -4,9 +4,9 @@ The nuts and bolts of the UNC Charlotte Official Minecraft server.
 
 ## Dependencies
 
-- [Dropbox](https://www.dropbox.com/install)
+- [dropbox](https://www.dropbox.com/install)
 - [git](https://git-scm.com/)
-- [Java 1.7+](https://java.com/en/download/)
+- [java](https://java.com/en/download/)
 - [ssh](http://www.openssh.com/)
 
 ## Directory Layout

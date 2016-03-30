@@ -1,13 +1,19 @@
 #!/bin/bash
 source $(dirname $(dirname $BASH_SOURCE))/CONFIG
 
-# log start time
-echo "START: $(date)" > $BACKUP_LOG
-echo "" >> $BACKUP_LOG
+# generate temporary location
+TMP=/tmp/niner-miners-tiles-$(uuidgen)
 
-# log AWS output
-aws s3 sync $MINECRAFT_DIR $AWS_S3_BUCKET --exclude $MINECRAFT_TILES --delete
+# move tiles to temp location to exclude from sync
+mv $MINECRAFT_TILES $TMP;
 
-# log end time
-echo "" >> $BACKUP_LOG
-echo "FINISH: $(date)" >> $BACKUP_LOG
+# start and stop dropbox sync
+dropbox start;
+while [ "$(dropbox status)" != "Up to date" ]; do
+  dropbox status;
+  sleep 1;
+done;
+dropbox stop;
+
+# return tiles back to permanent home
+mv $TMP $MINECRAFT_TILES;
