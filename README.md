@@ -15,6 +15,14 @@ $HOME/
     └── # all other Minecraft server files
 ```
 
+## Ports
+
+**8122** ‒ API
+
+**8123** ‒ Dynamp
+
+**25565** ‒ Minecraft
+
 ## Running
 
 Setup "fake" home directory:
