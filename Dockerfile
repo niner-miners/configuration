@@ -15,8 +15,9 @@ ENV   MINECRAFT_JAR   mcserver.jar
 ENV   MINECRAFT_MIN   1024M
 ENV   MINECRAFT_MAX   3072M
 
-ADD ./docker .
+ADD   ./docker .
 
-ADD ./mcserver.jar minecraft/mcserver.jar
+# tmp
+ADD   ./mcserver.jar minecraft/mcserver.jar
 
-CMD ["supervisord", "-n", "-c", "supervisord.conf"]
+CMD   ["supervisord", "-c", "supervisord.conf"]
