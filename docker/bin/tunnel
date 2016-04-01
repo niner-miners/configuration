@@ -1,0 +1,15 @@
+#!/bin/bash
+
+TUNNELS=""
+
+map () { TUNNELS="$TUNNELS $1" }
+
+map $PORT_MAP_SSH
+map $PORT_MAP_API
+map $PORT_MAP_DYNMAP
+map $PORT_MAP_SERVER
+
+echo $TUNNELS
+
+# use autossh to keep SSH tunnels open
+# autossh $TUNNELS -M $TUNNEL_MONITOR_PORT -N $TUNNEL_USER@$TUNNEL_HOST
