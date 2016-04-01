@@ -24,13 +24,16 @@ ENV   MINECRAFT_MIN   1024M
 ENV   MINECRAFT_MAX   3072M
 
 # SSH TUNNEL ENVIRONMENT VARIABLES
-ENV   PORT_MAP_SSH      "22:60122"
-ENV   PORT_MAP_API      "XX:50100"
-ENV   PORT_MAP_DYNMAP   "8123:50200"
-ENV   PORT_MAP_SERVER   "25565:60100"
+ENV   PORT_MAP_API      "X:localhost:80"
+ENV   PORT_MAP_DYNMAP   "X:localhost:8123"
+ENV   PORT_MAP_SERVER   "X:localhost:25565"
+ENV   TUNNEL_MONITOR    "X"
+ENV   TUNNEL_USER       "guest"
+ENV   TUNNEL_HOST       "ninerminers.com"
+ENV   SSH_PRIVATE_KEY   "/root/data/.ssh/id_rsa"
 
 # COPY LOCAL CONFIG FILES
-ADD   ./docker .
+COPY  ./docker .
 
 # START SUPERVISOR AT RUNTIME
-CMD   ["bin/server"]
+CMD   ["supervisord", "-c", "supervisord.conf"]
