@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "eula=true" > $MINECRAFT_DIR/eula.txt
+cd $MINECRAFT_DIR
 java -Xms$MINECRAFT_MIN -Xmx$MINECRAFT_MAX -jar $MINECRAFT_JAR nogui
