@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# enter the minecraft volume
+cd $MINECRAFT_DIR
+
+# start the Minecraft server
+# screen -DmS $MINECRAFT_ID java -Xms$MINECRAFT_MIN -Xmx$MINECRAFT_MAX -jar $MINECRAFT_JAR nogui
+echo "eula=true" > $MINECRAFT_DIR/eula.txt
+java -Xms$MINECRAFT_MIN -Xmx$MINECRAFT_MAX -jar $MINECRAFT_JAR nogui
+# sleep 5h

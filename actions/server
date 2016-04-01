@@ -1,8 +1,0 @@
-#!/bin/bash
-source $(dirname $(dirname $BASH_SOURCE))/CONFIG
-
-# change directory to server files
-cd $MINECRAFT_DIR
-
-# start the Minecraft server in a screen instance
-screen -DmS $MINECRAFT_ID java -Xms$MINECRAFT_MIN -Xmx$MINECRAFT_MAX -jar $MINECRAFT_JAR nogui
