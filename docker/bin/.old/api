@@ -1,9 +1,0 @@
-#!/bin/bash
-set -a
-source $(dirname $(dirname $BASH_SOURCE))/CONFIG
-
-# start node script
-node $API_DIR
-
-# close set variables
-set +a
