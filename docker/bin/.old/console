@@ -1,5 +1,0 @@
-#!/bin/bash
-source $(dirname $(dirname $BASH_SOURCE))/CONFIG
-
-# view running instance
-screen -r $MINECRAFT_ID
