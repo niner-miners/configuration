@@ -32,10 +32,10 @@ ENV   MINECRAFT_MIN   1024M
 ENV   MINECRAFT_MAX   3072M
 
 # SSH TUNNEL ENVIRONMENT VARIABLES
-ENV   PORT_MAP_API      "X:localhost:$API_PORT"
-ENV   PORT_MAP_DYNMAP   "X:localhost:8123"
-ENV   PORT_MAP_SERVER   "X:localhost:25565"
-ENV   TUNNEL_MONITOR    "X"
+ENV   PORT_MAP_SERVER   "8101:localhost:25565"
+ENV   PORT_MAP_API      "8102:localhost:$API_PORT"
+ENV   PORT_MAP_DYNMAP   "8103:localhost:8123"
+ENV   TUNNEL_MONITOR    "8100"
 ENV   TUNNEL_USER       "guest"
 ENV   TUNNEL_HOST       "ninerminers.com"
 ENV   SSH_PRIVATE_KEY   "/root/data/.ssh/id_rsa"
