@@ -8,7 +8,7 @@ RUN   apt-get install -y curl
 RUN   apt-get install -y git
 RUN   apt-get install -y python-setuptools
 RUN   apt-get install -y screen
-RUN   apt-get install -y unzip wget
+RUN   apt-get install -y unzip
 
 # INSTALL SUPERVISOR
 RUN   easy_install supervisor
@@ -18,7 +18,7 @@ RUN   curl -sL https://deb.nodesource.com/setup_5.x | bash
 RUN   apt-get install -y nodejs
 
 # INSTALL RCLONE
-RUN   wget http://downloads.rclone.org/rclone-v1.28-linux-amd64.zip -O /tmp/rclone.zip
+RUN   curl http://downloads.rclone.org/rclone-v1.28-linux-amd64.zip -o /tmp/rclone.zip
 RUN   unzip /tmp/rclone.zip -d /tmp
 RUN   mv /tmp/*/rclone /bin
 
