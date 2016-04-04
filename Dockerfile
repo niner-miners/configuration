@@ -1,26 +1,26 @@
 FROM ubuntu
 
 # INSTALL UBUNTU PACKAGES
-RUN apt-get update
-RUN apt-get install -y autossh
-RUN apt-get install -y default-jre
-RUN apt-get install -y curl
-RUN apt-get install -y git
-RUN apt-get install -y python-setuptools
-RUN apt-get install -y screen
-RUN apt-get install -y unzip wget
+RUN   apt-get update
+RUN   apt-get install -y autossh
+RUN   apt-get install -y default-jre
+RUN   apt-get install -y curl
+RUN   apt-get install -y git
+RUN   apt-get install -y python-setuptools
+RUN   apt-get install -y screen
+RUN   apt-get install -y unzip wget
 
 # INSTALL SUPERVISOR
-RUN easy_install supervisor
+RUN   easy_install supervisor
 
 # INSTALL NODE
-RUN curl -sL https://deb.nodesource.com/setup_5.x | bash
-RUN apt-get install -y nodejs
+RUN   curl -sL https://deb.nodesource.com/setup_5.x | bash
+RUN   apt-get install -y nodejs
 
 # INSTALL RCLONE
-RUN wget http://downloads.rclone.org/rclone-v1.28-linux-amd64.zip -O /tmp/rclone.zip
-RUN unzip /tmp/rclone.zip -d /tmp
-RUN mv /tmp/*/rclone /bin
+RUN   wget http://downloads.rclone.org/rclone-v1.28-linux-amd64.zip -O /tmp/rclone.zip
+RUN   unzip /tmp/rclone.zip -d /tmp
+RUN   mv /tmp/*/rclone /bin
 
 # ENTER ROOT DIRECTORY
 WORKDIR /root
@@ -55,17 +55,17 @@ ENV   SSH_PRIVATE_KEY   "/data/keys/id_rsa"
 ENV   RCLONE_CONFIG     "/data/keys/rclone.conf"
 
 # SAVE ENVIRONMENT VARIABLES TO TEMPORARY FILE
-RUN env > /tmp/env
+RUN   env > /tmp/env
 
 # DOWNLOAD API FILES
-RUN git clone https://github.com/niner-miners/api.ninerminers.com $API_DIR
-RUN npm --prefix $API_DIR install $API_DIR
+RUN   git clone https://github.com/niner-miners/api.ninerminers.com $API_DIR
+RUN   npm --prefix $API_DIR install $API_DIR
 
 # COPY LOCAL CONFIG FILES
 COPY  ./docker .
 
 # ENABLE CRON
-RUN crontab /root/crontab
+RUN   crontab /root/crontab
 
 # START SUPERVISOR AT RUNTIME
 CMD   ["supervisord", "-c", "supervisord.conf"]
