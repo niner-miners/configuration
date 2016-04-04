@@ -1,0 +1,10 @@
+#!/bin/bash
+source /tmp/env
+
+echo "START: $(date)" > $BACKUP_LOG
+
+/bin/rclone --config $RCLONE_CONFIG \
+            --log-file $BACKUP_LOG \
+            sync /data google-drive:data
+
+echo "END: $(date)" >> $BACKUP_LOG
